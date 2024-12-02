@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landpage</title>
+</head>
+<body>
+    {% comment %} <a href="{% url "login" %}">Button</a> {% endcomment %}
+    <button onclick="window.location.href={% url "baseapp:login" %}">Login</button>
+    <button onclick="window.location.href={% url "baseapp:logout" %}">Logout</button>
+    <button onclick="window.location.href={% url "baseapp:create_account" %}">Create Account</button>
+</body>
+</html>

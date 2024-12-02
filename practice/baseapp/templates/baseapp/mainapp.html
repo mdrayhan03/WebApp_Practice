@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} font awesome css link {% endcomment %}
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{% static "css/style.css" %}?v={{ timestamp }}">
+    <title>Home Page</title>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <div class="options">
+            <i class="fa-solid fa-user" onclick="window.location.href={% url "baseapp:profile" %}"></i>
+            <i class="fa-solid fa-gear"></i>                
+            <i class="fa-solid fa-right-from-bracket" onclick="window.location.href={% url "baseapp:logout" %}"></i>
+        </div>
+    </header>
+    <div class="main-body">
+    <nav>
+        <ul class="option">
+            <li>Home</li>
+            <li onclick="expandFunction(0)">
+                Database
+                <i class="fa-solid fa-angle-down"></i>
+            </li>
+                <ul class="suboption">
+                    <li>Supabase</li>
+                    <li>MySQL</li>
+                    <li>SQL Lite</li>
+                    <li>MongoDB</li>
+                    <li>MariaDB</li>
+                </ul>
+            <li onclick="expandFunction(1)">
+                Payment
+                <i class="fa-solid fa-angle-down"></i>
+            </li>
+                <ul class="suboption">
+                    <li>Strip</li>
+                    <li>Bkash</li>
+                    <li>Nagad</li>
+                    <li>Visa/Master</li>
+                </ul>
+            <li onclick="expandFunction(2)">
+                MS
+                <i class="fa-solid fa-angle-down drop"></i>
+            </li>
+                <ul class="suboption">
+                    <li>MS Word</li>
+                    <li>MS Excel</li>
+                </ul>           
+            <li>Data Visualization</li>
+            <li>About Me</li>
+            <li onclick="window.location.href={% url "baseapp:logout" %}">Logout</li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container">
+            {% block content %}{% endblock content %}
+        </div>    
+    </main>
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        document.title = "{% block title_name %}Home Page{% endblock title_name %}" ;
+    }
+</script>
+<script src="{% static "script/script.js" %}"></script>
+</html>

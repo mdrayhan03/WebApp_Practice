@@ -1,0 +1,140 @@
+:root {
+  --textcolor1 : white ;
+  --bgcolor1 : #9551A7 ;
+  --bghover1 : #846FAA ;
+  --bgcolor2 : #43185D ;
+  --cbtnfz : 16px ;
+  --navfz : 24px ;
+  --shadowcolor : rgba(0, 0, 0, 0.5) ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+header {
+    height: 70px;
+    width: 100%;
+    color: white;
+    background-color: var(--bgcolor2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+  width: 100px;
+  height: auto;
+  background: #000;
+}
+
+header .options {
+  padding-right: 20px;
+}
+
+header .options i {
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+header .options i:hover {
+  background-color: var(--bghover1);
+}
+
+.main-body {
+    display: flex;
+    height: calc(100% - 70px);
+}
+
+nav {
+  padding: 0 10px;
+  width: 15%;
+  height: 100%;
+  font-size: var(--navfz);
+  background-color: var(--bgcolor1);
+  color: var(--textcolor1);
+}
+
+.option li {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-angle-down {
+  transition: 0.5s ease-in-out;
+}
+
+.option li:hover {
+  background: var(--bghover1);
+}
+
+.suboption {
+  margin-left: 15px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+/* .option li:hover + .suboption {
+  max-height: 100px;
+}
+
+.suboption li:hover .suboption {
+  max-height: 100px;
+} */
+
+/* .active {
+  max-height: 100px;
+} */
+
+ul {
+  list-style: none;
+}
+
+li {
+    cursor: pointer;
+}
+
+main {
+  flex: 1;
+  padding: 30px 40px;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+
+.container {
+  height: auto;
+  padding: 20px 30px;
+  box-shadow: 0 0 25px var(--shadowcolor);
+  border-radius: 10px;
+}
+
+.cbtn {
+  margin: 10px 0px;
+  padding: 7px 20px;
+  font-size: 16px;
+  font-weight: bolder;
+  color: white;
+  background-color: var(--bgcolor1);
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 0 15px var(--shadowcolor);
+}
+
+.page-title {
+  text-align: center;
+}
